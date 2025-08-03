@@ -1,0 +1,19 @@
+[toolchain]
+anchor_version = "0.29.0"
+
+[features]
+seeds = false
+skip-lint = false
+
+[programs.devnet]
+oft = "8E6vixRdgD1FzgfcbnpuAFV2TX28qLiMBW6meW6BvXrr"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "Devnet"
+wallet = "/Users/chicunic/.config/solana/id.json"
+
+[scripts]
+test = "npx jest test/anchor"
