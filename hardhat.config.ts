@@ -60,9 +60,17 @@ const config: HardhatUserConfig = {
         ],
     },
     networks: {
+        mainnet: {
+            eid: EndpointId.ETHEREUM_V2_MAINNET,
+            url: process.env.RPC_URL_MAINNET || 'https://mainnet.gateway.tenderly.co',
+            accounts,
+            oftAdapter: {
+                tokenAddress: process.env.TOKEN_ADDRESS_ETHEREUM || '', // Set the token address for the OFT adapter
+            },
+        },
         'sepolia-testnet': {
             eid: EndpointId.SEPOLIA_V2_TESTNET,
-            url: process.env.RPC_URL_SEPOLIA || 'https://gateway.tenderly.co/public/sepolia',
+            url: process.env.RPC_URL_SEPOLIA || 'https://sepolia.gateway.tenderly.co',
             accounts,
             oftAdapter: {
                 tokenAddress: process.env.TOKEN_ADDRESS_ETHEREUM || '', // Set the token address for the OFT adapter
