@@ -194,11 +194,19 @@ sh -c "$(curl -sSfL https://release.anza.xyz/v1.17.31/install)"
 
 ### 4. 创建 Solana OFT
 
+在 `Mainnet` 上
+
+```bash
+pnpm hardhat lz:oft:solana:create --eid 30168 --program-id <OFT_PROGRAM_ID> --name <OFT_NAME> --symbol <OFT_SYMBOL> --only-oft-store true
+```
+
+在 `Devnet` 上
+
 ```bash
 pnpm hardhat lz:oft:solana:create --eid 40168 --program-id <OFT_PROGRAM_ID> --name <OFT_NAME> --symbol <OFT_SYMBOL> --only-oft-store true
 ```
 
-此命令将创建一个 Solana OFT，只有 OFT Store 作为 Mint Authority。
+替换命令中的 `OFT_PROGRAM_ID`、`OFT_NAME` 和 `OFT_SYMBOL` 为实际值。此命令将创建一个 Solana OFT，只有 OFT Store 作为 Mint Authority。
 
 ### 5. 部署 EVM 链 OFT 对等合约
 
